@@ -31,7 +31,8 @@ public class Score {
     private LocalDateTime createdAt;
 
     @Builder
-    public Score(Member member, int point, String reason, LocalDateTime createdAt) {
+
+    public Score(Member member, int point, ScoreReason reason, LocalDateTime createdAt) {
         this.member = member;
         this.point = point;
         this.reason = reason;
