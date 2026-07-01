@@ -27,9 +27,8 @@ public class ChallengeParticipant {
     private boolean isCompleted = false;
 
     @Builder
-    public ChallengeParticipant(Member member, Challenge challenge, boolean isCompleted) {
+    public ChallengeParticipant(Member member, Challenge challenge) {
         this.member = member;
         this.challenge = challenge;
-        this.isCompleted = isCompleted;
     }
 }
