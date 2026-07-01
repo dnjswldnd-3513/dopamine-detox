@@ -24,8 +24,8 @@ public class Score {
     @Column(nullable = false)
     private int point;
 
-    @Column(nullable = false)
-    private String reason;
+    @Enumerated(EnumType.STRING)
+    private ScoreReason reason;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
