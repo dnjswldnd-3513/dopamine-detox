@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url:jdbc:mysql//localhost:3306/dopamine_detox/serverTimezone=Asia/Seoul
+  username: root
+  userpassword: wldnd3513
+  driver-class-name : com.mysql.cj.jdbc.Driver
+
+jpa:
+  hibernate:
+    ddl-auto: create # 처음 프로젝트 생성때는 create로 이후 validate로 바꿔야함
+    #jpa가 entity 테이블을 어떻게 처리할지 결정
+    # create - 서버 시작할때 테이블 새로 만듬 즉 데이터가 날아간다.
+
+  show-sql: true
+  # 서버가 실행한 쿼리를 콘솔에 출력 개발할때 쿼리요 나중에 끄는게 좋을듯
+  properties:
+    hibernate:
+      format_sql: true
+      # 출력되는 쿼리문을 보기 좋게 바꿔줌
+
+
+jwt:
+    secret: dnjswldnd-3513-jwt-bcsd-key-3513
+    expiration: 86400000 # 24시간
