@@ -9,6 +9,7 @@ jpa:
   hibernate:
     ddl-auto: create # 처음 프로젝트 생성때는 create로 이후 validate로 바꿔야함
     #jpa가 entity 테이블을 어떻게 처리할지 결정
+    # 해당 이거때문에 굳이 그 table을 만들 필요가 없어진다.
     # create - 서버 시작할때 테이블 새로 만듬 즉 데이터가 날아간다.
 
   show-sql: true
