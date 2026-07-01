@@ -19,9 +19,14 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동 으로 숫자 올라가게 pk증가
     private Long id;
 
+    @Column(nullable = false)
     private String name;
+    @Column(unique = true, nullable = false)
     private String email;
+    @Column(nullable = false)
     private String password;
+    //nullable = false --> DB에서 not null
+    //unique --> 중복 이메일 방지
 
     @Enumerated(EnumType.STRING) //Enum 형태를 저장할떄 문자열로 저장
     private Role role;
