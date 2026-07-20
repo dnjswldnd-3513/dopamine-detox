@@ -30,5 +30,10 @@ public class ChallengeParticipant {
     public ChallengeParticipant(Member member, Challenge challenge) {
         this.member = member;
         this.challenge = challenge;
+        this.isCompleted = false;
+    }
+
+    public void complete() {
+        this.isCompleted = true;
     }
 }

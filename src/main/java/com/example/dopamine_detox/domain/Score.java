@@ -25,13 +25,13 @@ public class Score {
     private int point;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private ScoreReason reason;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
     @Builder
-
     public Score(Member member, int point, ScoreReason reason, LocalDateTime createdAt) {
         this.member = member;
         this.point = point;
