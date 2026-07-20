@@ -2,6 +2,7 @@ package com.example.dopamine_detox.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -14,9 +15,10 @@ public class AppCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
+    @Builder
     public AppCategory(String name) {
         this.name = name;
     }

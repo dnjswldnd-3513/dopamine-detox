@@ -22,22 +22,24 @@ public class UsageRecord {
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "appCategory_id")
+    @JoinColumn(name = "app_category_id")
     private AppCategory appCategory;
 
     @Column(nullable = false)
     private LocalDateTime startTime;
-    @Column(nullable = false)
-    private LocalDateTime endTime;
 
-    @Column(nullable = false)
-    private int durationMinutes;
+    private LocalDateTime endTime;       // stop 시 설정
+
+    private int durationMinutes;         // stop 시 계산
 
     @Builder
-    public UsageRecord(Member member, AppCategory appCategory, LocalDateTime startTime, LocalDateTime endTime, int durationMinutes) {
+    public UsageRecord(Member member, AppCategory appCategory, LocalDateTime startTime) {
         this.member = member;
         this.appCategory = appCategory;
         this.startTime = startTime;
+    }
+
+    public void finish(LocalDateTime endTime, int durationMinutes) {
         this.endTime = endTime;
         this.durationMinutes = durationMinutes;
     }

@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -19,7 +18,7 @@ public class Challenge {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "appCategory_id")
+    @JoinColumn(name = "app_category_id")
     private AppCategory appCategory;
 
     @Column(nullable = false)
@@ -41,12 +40,12 @@ public class Challenge {
     private int bonusScore;
 
     @Builder
-    public Challenge(AppCategory appCategory, String title, String description, int limitMinutes, LocalDate createdAt, LocalDate endDate, int bonusScore) {
+    public Challenge(AppCategory appCategory, String title, String description, int limitMinutes, LocalDate startDate, LocalDate endDate, int bonusScore) {
         this.appCategory = appCategory;
         this.title = title;
         this.description = description;
         this.limitMinutes = limitMinutes;
-        this.startDate = createdAt;
+        this.startDate = startDate;
         this.endDate = endDate;
         this.bonusScore = bonusScore;
     }
